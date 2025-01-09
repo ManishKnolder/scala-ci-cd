@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v1
         with:
           java-version: '11'  # Use an appropriate JDK version for your project
 
@@ -31,10 +31,9 @@ jobs:
 
       - name: Install sbt
         run: |
-          curl -Lo sbt-launcher.jar https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.jar
-          echo "java -Xmx512M -Xms512M -jar sbt-launcher.jar" > sbt
-          chmod +x sbt
-          ./sbt --version
+          echo "Installing sbt..."
+          sudo apt-get update
+          sudo apt-get install -y sbt
 
       - name: Install dependencies and run tests
         run: |
