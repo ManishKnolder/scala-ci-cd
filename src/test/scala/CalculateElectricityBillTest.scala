@@ -8,7 +8,7 @@ class CalculateElectricityBillTest extends AnyFlatSpec {
   val currentUnit: Int = 5904
 
   //Creating instance of case class CustomerDetails
-  val account = CustomerDetails(accountNumber, username, address, previousUnit, currentUnit)
+  val account: CustomerDetails = CustomerDetails(accountNumber, username, address, previousUnit, currentUnit)
 
   //TEST WITH equals to equals to(==)
   it should "match with value" in {
