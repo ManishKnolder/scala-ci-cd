@@ -31,10 +31,9 @@ jobs:
 
       - name: Install sbt
         run: |
-          curl -Lo sbt-launcher.jar https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.jar
-          echo "java -Xmx512M -Xms512M -jar sbt-launcher.jar" > sbt
-          chmod +x sbt
-          ./sbt --version
+          echo "Installing sbt..."
+          sudo apt-get update
+          sudo apt-get install -y sbt
 
       - name: Install dependencies and run tests
         run: |
